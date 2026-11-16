@@ -1,5 +1,4 @@
-
-const API = "http://127.0.0.1:8000";
+const API = "https://roots-and-rations.onrender.com";
 
 let token = localStorage.getItem("rr_token");
 let selectedImage = null;
