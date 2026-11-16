@@ -953,6 +953,12 @@ async function loadHistory() {
 
 updateAuthMode();
 
+if (token) {
+  $("accountButton").textContent = "My Account";
+  $("topAccountButton").textContent = "My Account";
+  loadHistory();
+}
+
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("./sw.js")
