@@ -1,0 +1,665 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <meta name="theme-color" content="#f7f5ed">
+  <meta name="description"
+        content="Roots & Rations — your home for growing, cooking and nourishing.">
+
+  <!-- iPhone / iOS PWA support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Roots & Rations">
+
+  <!-- Android and general PWA -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <title>Roots & Rations | Grow. Cook. Nourish.</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- App icon for iPhone -->
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+  <div class="app-shell">
+
+    <!-- DESKTOP SIDEBAR -->
+    <aside class="sidebar">
+
+      <a class="brand" href="#" data-view="home">
+        <span class="brand-icon">🌿</span>
+        <span>Roots <em>&</em> Rations</span>
+      </a>
+
+      <p class="side-label">YOUR SPACE</p>
+
+      <button class="nav-item active" data-view="home">
+        ⌂ <span>Home</span>
+      </button>
+
+      <button class="nav-item" data-view="chat">
+        ✳ <span>AI Companion</span>
+      </button>
+
+      <button class="nav-item" data-view="recipes">
+        ♨ <span>Recipe Studio</span>
+      </button>
+
+      <button class="nav-item" data-view="garden">
+        ♧ <span>Garden Companion</span>
+      </button>
+
+      <div class="sidebar-note">
+        <span>✿ A little reminder</span>
+        <p>
+          Good things take time. So do gardens,
+          good food and good days.
+        </p>
+      </div>
+
+      <button class="nav-item account-link" id="accountButton">
+        ☺ <span>Sign in / Account</span>
+      </button>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-area">
+
+      <!-- TOP BAR -->
+      <header class="topbar">
+
+        <button class="mobile-brand" data-view="home">
+          🌿 Roots & Rations
+        </button>
+
+        <div class="top-actions">
+          <span class="date-label" id="todayLabel"></span>
+
+          <button class="profile-button" id="topAccountButton"
+                  aria-label="Open account">
+            ☺
+          </button>
+        </div>
+
+      </header>
+
+
+      <!-- HOME VIEW -->
+      <section class="view active-view" id="homeView">
+
+        <div class="welcome">
+
+          <div class="welcome-content">
+
+            <p class="eyebrow">A LITTLE MORE HOMEGROWN</p>
+
+            <h1>
+              What shall we<br>
+              <em>grow, cook or create?</em>
+            </h1>
+
+            <p class="welcome-copy">
+              Your friendly companion for a greener garden,
+              a happier kitchen and everyday nourishment.
+            </p>
+
+            <button class="primary-button" data-view="chat">
+              Talk to your companion <span>↗</span>
+            </button>
+
+          </div>
+
+          <div class="welcome-art">
+
+            <div class="art-circle">🌱</div>
+
+            <span class="floating-leaf leaf-one">🍃</span>
+            <span class="floating-leaf leaf-two">🌼</span>
+
+            <span class="art-caption">
+              Grow a little. Enjoy a lot.
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- FEATURES -->
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">EXPLORE YOUR HOME</p>
+            <h2>Where would you like to begin?</h2>
+          </div>
+        </div>
+
+
+        <div class="feature-grid">
+
+          <button class="feature-card recipe-card" data-view="recipes">
+            <span class="feature-emoji">🥗</span>
+            <span class="feature-tag">IN THE KITCHEN</span>
+            <strong>Recipe Studio</strong>
+            <span>
+              Turn everyday ingredients into something lovely.
+            </span>
+            <b class="card-arrow">↗</b>
+          </button>
+
+
+          <button class="feature-card garden-card" data-view="garden">
+            <span class="feature-emoji">🪴</span>
+            <span class="feature-tag">IN THE GARDEN</span>
+            <strong>Garden Companion</strong>
+            <span>
+              Grow herbs, vegetables and a little happiness.
+            </span>
+            <b class="card-arrow">↗</b>
+          </button>
+
+
+          <button class="feature-card pantry-card"
+                  data-view="chat"
+                  data-prompt="Help me organise my pantry and reduce food waste.">
+
+            <span class="feature-emoji">🫙</span>
+            <span class="feature-tag">IN YOUR PANTRY</span>
+            <strong>Kitchen Helper</strong>
+            <span>
+              Storage tips, substitutions and clever leftovers.
+            </span>
+            <b class="card-arrow">↗</b>
+
+          </button>
+
+
+          <button class="feature-card eco-card"
+                  data-view="chat"
+                  data-prompt="Give me some simple sustainable habits for my kitchen and home.">
+
+            <span class="feature-emoji">♻️</span>
+            <span class="feature-tag">LIVE A LITTLE GREENER</span>
+            <strong>Sustainable Living</strong>
+            <span>
+              Small changes that make a meaningful difference.
+            </span>
+            <b class="card-arrow">↗</b>
+
+          </button>
+
+        </div>
+
+
+        <!-- QUICK PROMPTS -->
+        <div class="prompt-section">
+
+          <p class="eyebrow">
+            A FEW IDEAS TO GET YOU STARTED
+          </p>
+
+          <div class="prompt-chips">
+
+            <button data-prompt="Suggest a delicious dinner using simple pantry ingredients.">
+              🍲 Dinner inspiration
+            </button>
+
+            <button data-prompt="How do I start a small kitchen garden at home?">
+              🌱 Start a kitchen garden
+            </button>
+
+            <button data-prompt="How can I use leftovers creatively?">
+              🥕 Use my leftovers
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- CHAT VIEW -->
+      <section class="view" id="chatView">
+
+        <div class="page-heading">
+
+          <p class="eyebrow">YOUR EVERYDAY HELPER</p>
+
+          <h1>Your AI <em>Companion</em></h1>
+
+          <p>
+            Ask anything about food, gardening, your kitchen
+            or sustainable living.
+          </p>
+
+        </div>
+
+
+        <div class="chat-panel">
+
+          <div class="chat-top">
+
+            <div class="assistant-avatar">🌿</div>
+
+            <div class="chat-heading">
+              <strong>Roots & Rations</strong>
+              <span>
+                <i class="online-dot"></i> Ready to help
+              </span>
+            </div>
+
+            <button id="speakToggle"
+                    class="sound-button"
+                    title="Toggle spoken replies"
+                    aria-label="Toggle spoken replies">
+              🔊
+            </button>
+
+          </div>
+
+
+          <!-- CHAT MESSAGES -->
+          <div class="chat-messages"
+               id="chatMessages"
+               aria-live="polite"
+               aria-label="Chat messages">
+
+            <div class="message assistant-message">
+
+              <div class="message-avatar">🌿</div>
+
+              <div class="bubble">
+                Hello there! Welcome to your little corner of green. 🌱
+
+                <br><br>
+
+                What are we doing today — cooking something
+                delicious, growing something beautiful, or
+                making home life a little easier?
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- SUGGESTIONS -->
+          <div class="chat-suggestions">
+
+            <button data-prompt="Give me a quick healthy breakfast idea.">
+              Quick breakfast
+            </button>
+
+            <button data-prompt="What herbs can I grow in pots indoors?">
+              Indoor herbs
+            </button>
+
+            <button data-prompt="How do I store fresh vegetables for longer?">
+              Food storage
+            </button>
+
+          </div>
+
+
+          <!-- IMAGE PREVIEW -->
+          <div class="attachment-preview"
+               id="attachmentPreview"
+               hidden>
+
+            <img id="previewImage" alt="Selected image">
+
+            <button id="removeImage"
+                    title="Remove image"
+                    aria-label="Remove selected image">
+              ×
+            </button>
+
+          </div>
+
+
+          <!-- CHAT INPUT -->
+          <form class="chat-input-area" id="chatForm">
+
+            <input type="file"
+                   id="galleryInput"
+                   accept="image/*"
+                   hidden>
+
+            <input type="file"
+                   id="cameraInput"
+                   accept="image/*"
+                   capture="environment"
+                   hidden>
+
+
+            <button type="button"
+                    class="input-icon"
+                    id="galleryButton"
+                    title="Choose a photo"
+                    aria-label="Choose a photo">
+              ▧
+            </button>
+
+
+            <button type="button"
+                    class="input-icon"
+                    id="cameraButton"
+                    title="Take a photo"
+                    aria-label="Take a photo">
+              📷
+            </button>
+
+
+            <textarea id="messageInput"
+                      rows="1"
+                      placeholder="Ask me anything..."
+                      aria-label="Your message"></textarea>
+
+
+            <button type="button"
+                    class="input-icon"
+                    id="micButton"
+                    title="Voice input"
+                    aria-label="Voice input">
+              🎙
+            </button>
+
+
+            <button type="submit"
+                    class="send-button"
+                    id="sendButton"
+                    title="Send message"
+                    aria-label="Send message">
+              ↑
+            </button>
+
+          </form>
+
+
+          <p class="chat-disclaimer">
+            Your friendly AI companion. Always use your own
+            judgement with food safety and plant diagnoses.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- RECIPE VIEW -->
+      <section class="view" id="recipesView">
+
+        <div class="page-heading">
+
+          <p class="eyebrow">GOOD FOOD, MADE SIMPLE</p>
+
+          <h1>The Recipe <em>Studio</em></h1>
+
+          <p>
+            Find inspiration for your next meal.
+            Tell your companion what ingredients you have.
+          </p>
+
+        </div>
+
+
+        <div class="large-feature recipe-feature">
+
+          <span>🥘</span>
+
+          <div>
+
+            <p class="eyebrow">
+              LET'S MAKE SOMETHING DELICIOUS
+            </p>
+
+            <h2>What's in your kitchen today?</h2>
+
+            <p>
+              Share your ingredients, dietary preferences
+              or cravings.
+            </p>
+
+            <button class="primary-button"
+                    data-view="chat"
+                    data-prompt="Help me create a recipe. Ask me what ingredients I have.">
+              Create a recipe ↗
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="mini-grid">
+
+          <div class="mini-card">
+            🥑
+            <strong>Ingredient swaps</strong>
+            <span>Find clever alternatives.</span>
+          </div>
+
+          <div class="mini-card">
+            🍱
+            <strong>Meal planning</strong>
+            <span>Make your week easier.</span>
+          </div>
+
+          <div class="mini-card">
+            🥬
+            <strong>Less food waste</strong>
+            <span>Give leftovers new life.</span>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- GARDEN VIEW -->
+      <section class="view" id="gardenView">
+
+        <div class="page-heading">
+
+          <p class="eyebrow">GROW SOMETHING GOOD</p>
+
+          <h1>Your Garden <em>Companion</em></h1>
+
+          <p>
+            From the first seed to your first harvest,
+            let's grow together.
+          </p>
+
+        </div>
+
+
+        <div class="large-feature garden-feature">
+
+          <span>🪴</span>
+
+          <div>
+
+            <p class="eyebrow">
+              YOUR GROWING JOURNEY STARTS HERE
+            </p>
+
+            <h2>A little space. A lot of possibility.</h2>
+
+            <p>
+              Tell us about your space, sunlight
+              and favourite plants.
+            </p>
+
+            <button class="primary-button"
+                    data-view="chat"
+                    data-prompt="Help me plan a home kitchen garden. Ask about my space, sunlight and climate.">
+              Plan my garden ↗
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="mini-grid">
+
+          <div class="mini-card">
+            🌱
+            <strong>Getting started</strong>
+            <span>Seeds, pots and soil.</span>
+          </div>
+
+          <div class="mini-card">
+            💧
+            <strong>Plant care</strong>
+            <span>Watering and sunlight.</span>
+          </div>
+
+          <div class="mini-card">
+            🍅
+            <strong>Plant problems</strong>
+            <span>Share a photo for guidance.</span>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- MOBILE BOTTOM NAVIGATION -->
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+
+      <button class="active" data-view="home">
+        <span>⌂</span>
+        Home
+      </button>
+
+      <button data-view="chat">
+        <span>✳</span>
+        Chat
+      </button>
+
+      <button data-view="recipes">
+        <span>♨</span>
+        Recipes
+      </button>
+
+      <button data-view="garden">
+        <span>♧</span>
+        Garden
+      </button>
+
+    </nav>
+
+  </div>
+
+
+  <!-- LOGIN / REGISTER MODAL -->
+  <div class="modal-backdrop" id="authModal" hidden>
+
+    <div class="auth-modal">
+
+      <button class="modal-close"
+              id="closeAuth"
+              aria-label="Close">
+        ×
+      </button>
+
+      <div class="modal-logo">🌿</div>
+
+      <p class="eyebrow">
+        YOUR LITTLE CORNER OF GREEN
+      </p>
+
+      <h2 id="authTitle">Welcome back</h2>
+
+      <p id="authDescription">
+        Sign in to save your conversations and personal space.
+      </p>
+
+
+      <form id="authForm">
+
+        <label for="authEmail">Email address</label>
+
+        <input type="email"
+               id="authEmail"
+               placeholder="you@example.com"
+               autocomplete="email"
+               required>
+
+
+        <label for="authPassword">Password</label>
+
+        <input type="password"
+               id="authPassword"
+               placeholder="At least 8 characters"
+               minlength="8"
+               autocomplete="current-password"
+               required>
+
+
+        <button type="submit"
+                class="primary-button auth-submit"
+                id="authSubmit">
+          Sign in
+        </button>
+
+      </form>
+
+
+      <p class="auth-switch" id="authSwitch">
+        New here?
+        <button id="switchAuth" type="button">
+          Create an account
+        </button>
+      </p>
+
+      <p class="auth-status" id="authStatus" role="status"></p>
+
+    </div>
+
+  </div>
+
+
+  <!-- TOAST MESSAGE -->
+  <div class="toast" id="toast" role="status"></div>
+
+
+  <!-- KEEP YOUR EXISTING WORKING JAVASCRIPT -->
+  <script src="app.js"></script>
+
+</body>
+</html>
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./sw.js")
+        .then((registration) => {
+          console.log("App service worker registered:", registration.scope);
+        })
+        .catch((error) => {
+          console.error("Service worker registration failed:", error);
+        });
+    });
+  }
+</script>
